@@ -1,0 +1,401 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    background-color: black;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+.knowledge {
+    background-color: #041948;
+}
+
+.fiverr_btn {
+    background-color: #2e94c5;
+    color: white;
+    border: none;
+    font-size: larger;
+    border-radius: 5px;
+}
+
+.explore_game {
+    background-color: #11496f;
+}
+
+header {
+    background-color: black;
+    color: white;
+    font-size: larger;
+}
+
+footer {
+    background-color: black;
+    color: white;
+}
+
+#backtotop {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50px;
+}
+
+#backtotop:hover {
+    background-color: #555;
+}
+
+
+/********************/
+
+
+/* Color converter */
+
+
+/*******************/
+
+.color_converter {
+    background-color: #2e94c5;
+    margin-bottom: 25%;
+}
+
+.color_converter input[type=submit] {
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    background-color: rgb(8 245 201);
+    font-size: 28px;
+    height: 40px;
+    width: 150px;
+}
+
+.color_converter input[type=submit]:hover {
+    background-color: red;
+    color: rgb(8 245 201);
+}
+
+.color_converter input[type=number] {
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    background-color: rgb(255, 0, 200);
+    font-size: 20px;
+    height: 40px;
+    width: 300px;
+}
+
+.color_converter input[type=number]::placeholder {
+    color: black;
+}
+
+.color_converter label {
+    font-size: 25px;
+    font-weight: 1000;
+}
+
+
+/********************/
+
+
+/* Projects cards */
+
+
+/********************/
+
+.projects {
+    background-color: #151320;
+    display: grid;
+    font-family: 'Poppins', sans-serif;
+}
+
+.projects h1 {
+    margin-top: 20px;
+    font-size: 40px;
+    font-weight: 1000;
+}
+
+.projects .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 20px;
+    grid-gap: 40px;
+}
+
+.projects .card {
+    background-color: #1c1b29;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.18);
+}
+
+.projects .container {
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.projects .container::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px 20px 0 0;
+    opacity: 0.7;
+}
+
+.projects .details {
+    padding: 5px 10px;
+}
+
+.projects .details>h2 {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 10px 0 25px 0;
+    text-align: center;
+}
+
+.projects .details>p {
+    color: #a0a0a0;
+    font-size: 15px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+.projects .tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem 0 1rem;
+    padding-left: 20px;
+}
+
+.projects .tags div {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border: 3px solid #28242f;
+    border-radius: 2rem;
+}
+
+
+/*************************/
+
+
+/* Website calculator */
+
+
+/*************************/
+
+.webcalc {
+    background-color: #0566bb;
+    padding-bottom: 25%;
+    padding-top: 2%;
+}
+
+.webcalc input[type=submit] {
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    background-color: rgb(8 245 201);
+    font-size: 30px;
+    height: 40px;
+    width: 150px;
+}
+
+.webcalc input[type=submit]:hover {
+    background-color: red;
+    color: rgb(8 245 201);
+}
+
+.webcalc input[type=text] {
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    background-color: rgb(255, 0, 200);
+    font-size: 20px;
+    height: 40px;
+    width: 300px;
+}
+
+.webcalc input[type=text]::placeholder {
+    color: black;
+}
+
+.webcalc label {
+    font-size: 25px;
+    font-weight: 1000;
+}
+
+.webcalc select {
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    background-color: #00ff00;
+    font-size: 20px;
+}
+
+.webcalc h1 {
+    font-size: 100px;
+}
+
+
+/************/
+
+
+/* Skills */
+
+
+/***********/
+
+.skillsection {
+    max-width: 90%;
+}
+
+.skillsection .container {
+    width: 100%;
+}
+
+.skillsection h1 {
+    margin-top: 20px;
+    font-size: 40px;
+    font-weight: 1000;
+}
+
+.skillsection p {
+    font-size: 35px;
+    font-weight: 700;
+    margin-left: 5%;
+    color: #ff7300;
+}
+
+.skillsection .skill {
+    margin-left: 6%;
+    text-align: right;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 5px;
+    color: white;
+    font-weight: 700;
+    background-color: #0566bb;
+}
+
+.skillsection .python {
+    animation-iteration-count: 5;
+    animation-fill-mode: forwards;
+    animation: skillsectionpython ease 5s;
+    width: 95%;
+}
+
+@keyframes skillsectionpython {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 95%;
+    }
+}
+
+.skillsection .html {
+    animation-iteration-count: 5;
+    animation-fill-mode: forwards;
+    animation: skillsectionhtml ease 5s;
+    width: 99%;
+}
+
+@keyframes skillsectionhtml {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 99%;
+    }
+}
+
+.skillsection .css {
+    animation-iteration-count: 5;
+    animation-fill-mode: forwards;
+    animation: skillsectioncss ease 5s;
+    width: 56%;
+}
+
+@keyframes skillsectioncss {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 56%;
+    }
+}
+
+.skillsection .js {
+    animation-iteration-count: 5;
+    animation-fill-mode: forwards;
+    animation: skillsectionjs ease 5s;
+    width: 19%;
+}
+
+@keyframes skillsectionjs {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 19%;
+    }
+}
+
+.skillsection .cs {
+    animation-iteration-count: 5;
+    animation-fill-mode: forwards;
+    animation: skillsectioncs ease 5s;
+    width: 10%;
+}
+
+@keyframes skillsectioncs {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 10%;
+    }
+}
+
+
+/*****************/
+
+
+/* For Mobile */
+
+
+/*****************/
+
+@media screen and (max-width: 600px) {
+    /*************************/
+    /* Website calculator */
+    /*************************/
+    .webcalc {
+        padding-top: 10%;
+    }
+    .webcalc h1 {
+        font-size: 70px;
+        margin-bottom: 10%;
+    }
+}
