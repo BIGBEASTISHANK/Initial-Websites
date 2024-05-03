@@ -1,0 +1,25 @@
+a {
+    color: #37b3ed;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #00ff15;
+    text-decoration: none;
+}
+
+.header {
+    padding: 60px;
+    text-align: center;
+    background: red;
+    color: white;
+    font-size: 30px;
+}
+
+.header2 {
+    padding: 50px;
+    text-align: left;
+    background: black;
+    color: white;
+    font-size: 30px;
+}

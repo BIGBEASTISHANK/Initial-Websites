@@ -1,0 +1,298 @@
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BIG_BEAST_ISHANK Tambola No. Generator</title>
+    <link rel="icon" href="../../assets/img/favicon.png" type="image/icon">
+    <style>
+        * {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        
+        .container {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        
+        #grid-container {
+            margin-top: 20px;
+            max-width: 900px;
+            width: 100%;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .num {
+            width: 9%;
+            margin: 2px;
+            border: 1px solid #CCC;
+            display: inline-block;
+            color: #CCC;
+            font-size: 24px;
+            box-sizing: border-box;
+        }
+        
+        .generated {
+            border-color: blue;
+            color: blue;
+            background-color: lavender;
+        }
+        
+        #generator-container {
+            border: 1px solid #888;
+            display: block;
+            position: fixed;
+            left: 20px;
+            top: 80px;
+            padding: 20px;
+            text-align: center;
+            box-sizing: border-box;
+            background-color: #000000;
+        }
+        
+        #number {
+            font-size: 36px;
+            text-align: center;
+            color: orangered;
+            font-weight: bold;
+            margin-top: 40px;
+            display: inline-block;
+            background-color: #0000;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #0000;
+        }
+        
+        #btn-generate {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-color: #0099ff;
+            color: blac;
+            width: 100px;
+            font-size: 14px;
+            padding: 10px;
+            cursor: pointer;
+            border: 1px solid #0099ff;
+            border-radius: 5px;
+        }
+        
+        #btn-generate:active {
+            position: relative;
+            left: 1;
+            top: 1;
+        }
+        
+        #banner-container {
+            border: 1px solid #888;
+            display: block;
+            position: fixed;
+            right: 20px;
+            top: 80px;
+            padding: 20px;
+            text-align: center;
+            box-sizing: border-box;
+            background-color: #FFF;
+        }
+        
+        #footer {
+            font-size: 12px;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            color: #888;
+        }
+        
+        a:link,
+        a:visited {
+            color: blue;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: red;
+        }
+        
+        #um-banner {
+            margin-top: 15px;
+            border-top: 1px solid #888;
+            padding-top: 15px;
+        }
+        
+        @media screen and (min-width: 350px) and (max-width: 799px) {
+            #hv-banner {
+                display: inline-block;
+                vertical-align: top;
+            }
+            #um-banner {
+                display: inline-block;
+                padding-top: 0;
+                margin-top: 0;
+                border-top: none;
+                margin-left: 30px;
+                vertical-align: top;
+            }
+        }
+        
+        @media screen and (max-width: 799px) {
+            .container {
+                width: 100%;
+            }
+            #generator-container {
+                position: relative;
+                left: 0;
+                top: 0;
+                display: block;
+            }
+            #banner-container {
+                position: relative;
+                left: 0;
+                top: 0;
+                display: block;
+                margin-top: 20px;
+                border: none;
+            }
+            #grid-container {
+                width: 100%;
+            }
+            .num {
+                padding: 2px;
+                font-size: 14px;
+                margin: 1px;
+            }
+        }
+        
+        @media screen and (min-width: 800px) and (max-width: 1300px) {
+            #grid-container {
+                width: 600px;
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color:black;">
+    <script data-ad-client="ca-pub-5212436761863059" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <div class="container">
+        <h1 style="color:white">BIG_BEAST_ISHANK Tambola no.Generator</h1>
+
+        <div id="generator-container">
+            <input type="button" value="Generate" id="btn-generate" onclick="generateNum()">
+            <Br>
+            <div id="number">&nbsp;&nbsp;</div>
+        </div>
+
+        <div id="grid-container"></div>
+    </div>
+
+
+    <div id="footer">
+        Created by <a href="../../">BIG_BEAST_ISHANK</a>.
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        (function($) {
+            $.fn.extend({
+                numAnim: function(options) {
+                    if (!this.length)
+                        return false;
+
+                    this.defaults = {
+                        endAt: 90,
+                        numClass: 'autogen-num',
+                        duration: 0.5, // seconds
+                        interval: 25 // ms
+                    };
+                    var settings = $.extend({}, this.defaults, options);
+
+                    var $num = $('<span/>', {
+                        'class': settings.numClass
+                    });
+
+                    return this.each(function() {
+                        var $this = $(this);
+
+                        // Wrap each number in a tag.
+                        var frag = document.createDocumentFragment(),
+                            numLen = settings.endAt.toString().length;
+                        for (x = 0; x < numLen; x++) {
+                            var rand_num = Math.floor(Math.random() * 10);
+                            frag.appendChild($num.clone().text(rand_num)[0])
+                        }
+                        $this.empty().append(frag);
+
+                        var get_next_num = function(num) {
+                            ++num;
+                            if (num > 9) return 0;
+                            return num;
+                        };
+
+                        // Iterate each number.
+                        $this.find('.' + settings.numClass).each(function() {
+                            var $num = $(this),
+                                num = parseInt($num.text());
+
+                            var interval = setInterval(function() {
+                                num = get_next_num(num);
+                                $num.text(num);
+                            }, settings.interval);
+
+                            setTimeout(function() {
+                                clearInterval(interval);
+                            }, settings.duration * 1000 - settings.interval);
+                        });
+
+                        setTimeout(function() {
+                            $this.text(settings.endAt.toString());
+                            $("#num-" + settings.endAt).addClass("generated");
+                            generated_numbers.push(settings.endAt);
+                        }, settings.duration * 1000);
+                    });
+                }
+            });
+        })(jQuery);
+
+        var generated_numbers = [];
+
+        $(function() {
+            for (i = 1; i <= 90; i++) {
+                $("<div />").addClass("num").html(i).attr("id", "num-" + i).appendTo("#grid-container");
+            }
+
+            var cw = $('.num').width();
+            $('.num').css({
+                'height': cw + 'px',
+                'line-height': cw + 'px'
+            });
+        });
+
+        function generateNum() {
+            if (generated_numbers.length == 90) {
+                alert("Full House!");
+                return;
+            }
+            while (true) {
+                var i = getRandomInt(1, 90);
+                if ($.inArray(i, generated_numbers) == -1) {
+                    //$("#number").html(i);
+                    $("#number").numAnim({
+                        endAt: i
+                    });
+                    //$("#num-" + i).addClass("generated");
+                    //generated_numbers.push(i);
+                    //setTimeout("generateNum()",200);
+                    break;
+                }
+            }
+        }
+
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+    </script>
+</body>
+
+</html>
